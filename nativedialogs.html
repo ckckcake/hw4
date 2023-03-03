@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>Simple Dialogs?</h1>
+    <!--4 buttons-->
+    <button id="alert">Alert</button>
+    <button id="yes">Confirm</button>
+    <button id="ask">Prompt</button>
+    <button id="safe">Safer Prompt</button>
+    <hr>
+    <!--empty container for button event-->
+    <output id="rtrn"></output>
+    <!--defining button click events-->
+    <script type="text/javascript" src="src/purify.js">
+        //show alert window in browser 
+        document.getElementById("alert").addEventListener("click", alertFunc);
+        function alertFunc() {
+            alert("Alert pressed!");
+        }
+        //confirm
+        document.getElementById("yes").addEventListener("click", yesFunc);
+        function yesFunc() {
+            //if yes show true, else show false
+            let question = "Do you confirm this?";
+            if (confirm(question) == true) {
+                document.getElementById("rtrn").innerHTML = "The value returned by the confirm method is : true";
+            }
+            else {
+                document.getElementById("rtrn").innerHTML = "The value returned by the confirm method is : false";
+            }
+        }
+        //ask for name
+        document.getElementById("ask").addEventListener("click", askFunc);
+        function askFunc() {
+            //display input, if no input then show default
+            let name = prompt("Whats your name");
+            if (name != null) {
+                document.getElementById("rtrn").innerHTML = "Hi " + name;
+            }
+            else {
+                document.getElementById("rtrn").innerHTML = "User didn't write anything";
+            }
+        }
+        //run lint for prompt
+        document.getElementById("safe").addEventListener("click", safeFunc);
+        function safeFunc() {
+            let name = prompt("What is your name?");
+            let clean = DOMPurify.sanitize(name, { USE_PROFILES: { html: true } });
+            if (name != null) {
+                document.getElementById("rtrn").innerHTML = "Hi " + clean;
+            }
+            else {
+                document.getElementById("rtrn").innerHTML = "User didn't write anything";
+            }
+        }
+    </script>
+</body>
+
+</html>
