@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Kevin's Portfolio</title>
+	<!--referenced from w3schools.com/tags/tag_meta.asp-->
+	<meta charset="UTF-8">
+	<meta name="description" content="About Kevin and how to reach him.">
+	<meta name="keywords" content="Kevin Lam, UCSD, UCSD Kevin Lam, Bio">
+	<meta name="author" content="Kevin Lam">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<nav>
+		<a href="#aboutid">About Me</a> |
+		<a href="#contactid">Contact Me</a> |
+		<a href="#fbid">Feedback</a> 
+	</nav>
+	<main>
+		<div class="topclass">
+			<header>
+				<h1 id="topid"> Welcome!</h1>
+				<p>My name is <em>Kevin Lam</em> and its a pleasure to have you here.</p>
+			</header>
+		</div>
+		<hr>
+		<section id="aboutid">
+			<h2><strong>ABOUT ME</strong></h2>
+			<article>
+				<h3>Who Am I</h3>
+				<p>I am a <span><b>4th</b> year student at UCSD and I am studying for a bachelors in <i>Computer Science</i></span></p>
+				<aside>
+					<img src="images/ucsd.png" alt="UCSD logo">
+				</aside>
+			</article>
+			<article>
+				<h3>Things I Enjoy</h3>
+				<ul>
+					<li><b>Driving</b><br>its peaceful and calming to drive and look around</li>
+					<li><b>Gaming</b><br>a great way to hangout remotely</li>
+					<li><b>Spending time with friends</b><br>I can't just stay home all day after all</li>
+					<li><b>Drinking coffee</b><br>love the smell of freshly brewed coffee</li>
+				</ul>
+			</article>
+		</section>
+	</main>
+	<hr>
+	<div id="rand">
+		<details>
+			<summary><b>Random Things</b></summary>
+			<article>
+				<h3>Miscellaneous tomfoolery from here on out</h3>
+				<!--referenced sliding bar menu from w3schools-->
+				<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+					<fieldset>
+						<legend><strong>Special Calculator No. 200</strong></legend>
+						<p>Since you are here, why not try this new <i>amazing</i> and <i>absolutely innovative</i> calculator I have here for ya :) 
+							<br> <i>*sidenote: it only goes up to 200 btw</i></p>
+						<input type="range" id="a" value="0">
+						+<input type="range" id="b" value="0">
+						=<output name="x" for="a b"></output>
+					</fieldset>
+				  </form>	
+			</article>
+		</details>
+	</div>
+	<footer>
+		<a href="#topid">Back to top</a> 
+	</footer>
+</body>
+</html>
